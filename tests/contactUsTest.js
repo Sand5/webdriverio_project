@@ -15,8 +15,7 @@ browser.addCommand("submitContactFormData", function( firstName,lastName,emailAd
     if(comments) {
         browser.setValue("[name ='message']",comments);
     }
-    browser.submit("[type='submit']");
-    
+    browser.click("[type ='submit']");
 })
 
 
@@ -33,7 +32,7 @@ describe('Test Contact us form WebdriverUni',function(){
     })
 
     contectusDetails.forEach(function(contactDetail) {
-    it.only('Should be able to submit a successful submission via contact us form', function(){
+    it('Should be able to submit a successful submission via contact us form', function(){
 
         browser.submitContactFormData('Joe','Blogs','joeblogs@mail.com','Hello this is some data');
         //browser.setValue("[name='first_name']",'Joe');

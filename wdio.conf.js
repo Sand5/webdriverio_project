@@ -25,7 +25,7 @@ exports.config = {
     ],
     // Patterns to exclude.
     exclude: [
-         './pageObjects/*_Page.js'
+        './pageObjects/*_Page.js'
     ],
     //
     // ============
@@ -134,14 +134,21 @@ exports.config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: http://webdriver.io/guide/reporters/dot.html
-     reporters: ['dot','junit'],
+    reporters: ['dot', 'junit','allure'],
 
-     reporterOptions: {
+    reporterOptions: {
 
         junit: {
             outputDir: './reports/junit-results/'
+        },
+
+        allure: {
+            outputDir: './reports/allure-results/',
+            disableWebdriverStepsReporting: true,
+            disableWebdriverScreenshotsReporting:false
         }
-     },
+       
+    },
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -180,9 +187,9 @@ exports.config = {
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
     before: function (capabilities, specs) {
-         expect = require ('chai').expect;
-         should = require ('chai').should();
-         var assert = require ('chai').assert;
+        expect = require('chai').expect;
+        should = require('chai').should();
+        var assert = require('chai').assert;
     },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -245,8 +252,10 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that ran
      */
-    // after: function (result, capabilities, specs) {
-    // },
+     after: function (result, capabilities, specs) {
+         var name = 'ERROR-chrome' + Date.now();
+         browser.saveScreenshot('./errorShots/'+name +'.png');
+     },
     /**
      * Gets executed right after terminating the webdriver session.
      * @param {Object} config wdio configuration object
