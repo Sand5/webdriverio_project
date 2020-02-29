@@ -19,6 +19,7 @@
   "dependencies": {
     "@types/lodash": "^4.14.149",
     "chai": "^4.2.0",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "wdio-junit-reporter": "^0.4.4"
   }
 }

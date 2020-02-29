@@ -1,12 +1,12 @@
 class ContactUs_Page {
+
 	get firstName() { return $("[name='first_name']"); }
 	get lastName() { return $("[name='last_name']"); }
 	get comments() { return $("textarea"); }
 	get emailAddress() { return $("[name='email']"); }
 	get submitButton() { return $("[type='submit']"); }
-	get successfulSubmissionHeader() { return $('#contact_reply h1');}
-	get unsuccessfulSubmissionHeader() { return $('body');}
-
+	get successfulSubmissionHeader() { return $('#contact_reply h1'); }
+	get unsuccessfulSubmissionHeader() { return $('body'); }
 
 
 
@@ -46,13 +46,13 @@ class ContactUs_Page {
 		if (comments) {
 			this.comments.setValue(comments);
 		}
-		 this.submitButton.click();
-		 this.confirmSuccessfulSubmission();
+		this.submitButton.click();
+		this.confirmSuccessfulSubmission();
 
 	}
 
 	confirmSuccessfulSubmission() {
-		var successfulSubmissionHeader ='#contact_reply h1';
+		var successfulSubmissionHeader = '#contact_reply h1';
 		var validatesubmissionHeader = browser.waitUntil(function () {
 			return browser.getText(successfulSubmissionHeader) == 'Thank You for your Message!'
 		}, 3000)

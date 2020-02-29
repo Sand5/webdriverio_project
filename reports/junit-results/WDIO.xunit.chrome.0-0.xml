@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="Test_Contact_us_form_WebdriverUni" timestamp="2020-02-29T22:01:06" time="3.568" tests="3" failures="0" errors="0" skipped="2">
+    <properties>
+      <property name="specId" value="517ab364ab3d3f5c1e344cb6aca91b26"/>
+      <property name="suiteName" value="Test Contact us form WebdriverUni"/>
+      <property name="capabilities" value="chrome"/>
+      <property name="file" value="./tests/contactUsPageObjectTest.js"/>
+    </properties>
+    <testcase classname="chrome.Test_Contact_us_form_WebdriverUni" name="Should_be_able_to_submit_a_successful_submission_via_contact_us_form" time="3.566">
+      <system-out>
+        <![CDATA[
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/url - {"url":"http://www.webdriveruniversity.com/Contact-Us/contactus.html"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element - {"using":"name","value":"first_name"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":{"ELEMENT":"0.7517044809028759-1"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-1/clear - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-1/value - {"value":["J","o","e"],"text":"Joe"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element - {"using":"name","value":"last_name"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":{"ELEMENT":"0.7517044809028759-2"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-2/clear - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-2/value - {"value":["B","l","o","g","s"],"text":"Blogs"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element - {"using":"name","value":"email"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":{"ELEMENT":"0.7517044809028759-3"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-3/clear - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-3/value - {"value":["J","o","e","B","l","o","g","s","@","g","(8 more items)"],"text":"JoeBlogs@gmail.com"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element - {"using":"css selector","value":"textarea"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":{"ELEMENT":"0.7517044809028759-4"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-4/clear - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-4/value - {"value":["H","o","w"," ","a","r","e"," ","y","o","(2 more items)"],"text":"How are you?"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element - {"using":"css selector","value":"[type='submit']"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":{"ELEMENT":"0.7517044809028759-5"}}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.7517044809028759-5/click - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+COMMAND: POST http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/elements - {"using":"css selector","value":"#contact_reply h1"}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":[{"ELEMENT":"0.748468263768157-1"}]}
+COMMAND: GET http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690/element/0.748468263768157-1/text - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":"Thank You for your Message!"}
+COMMAND: DELETE http://127.0.0.1:4444/wd/hub/session/c8f84bfe7f40f764c12d47490c83c690 - {}
+RESULT: {"sessionId":"c8f84bfe7f40f764c12d47490c83c690","status":0,"value":null}
+]]>
+      </system-out>
+    </testcase>
+    <testcase classname="chrome.Test_Contact_us_form_WebdriverUni" name="Should_not_be_able_to_submit_a_successful_submission_via_contact_us_form_as_all_fields_are_required" time="0">
+      <skipped/>
+    </testcase>
+    <testcase classname="chrome.Test_Contact_us_form_WebdriverUni" name="Should_not_be_able_to_submit_a_successful_submission_via_contact_us_form_as_all_fields_are_required" time="0">
+      <skipped/>
+    </testcase>
+  </testsuite>
+</testsuites>
