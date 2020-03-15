@@ -1,7 +1,7 @@
 describe('Test that the button is clickable once the Ajax loader completes loading',function() {
     it('Attempts to click on the button asap',function() {
         browser.url('/Ajax-Loader/index.html')
-        browser.click('#button1555');
+        browser.click('#button');
   
     });
 
