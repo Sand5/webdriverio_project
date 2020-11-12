@@ -1,8 +1,8 @@
 import Base_PO from "./Base_PO";
 
 class ContactUs_PO extends Base_PO {
-  open() {
-    super.open("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
+  async open() {
+   await super.open("http://www.webdriveruniversity.com/Contact-Us/contactus.html");
   }
 
   get firstName() {
@@ -25,8 +25,8 @@ class ContactUs_PO extends Base_PO {
     return $("[type='submit']");
   }
 
-  submit() {
-    this.submitButton.click();
+   submit() {
+    return this.submitButton.click();
   }
 
  get getSuccessfulContactHeader(){

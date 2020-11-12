@@ -20,7 +20,7 @@ exports.config = {
   runner: "local",
   //
   // Override default path ('/wd/hub') for chromedriver service.
-  path: "/",
+  //path: ("/wd/hub"),
   //
   // ==================
   // Specify Test Files
@@ -30,9 +30,9 @@ exports.config = {
   // NPM script (see https://docs.npmjs.com/cli/run-script) then the current working
   // directory is where your package.json resides, so `wdio` will be called from there.
   //
-  specs: ["./test/**/*.js"],
+  specs: ["./test/**/contactUsTest.js"],
   // Patterns to exclude.
-  exclude: ["./pageObjects/*_Page.js"],
+  //exclude: ["./pageObjects/*_PO.js"],
   //
   // ============
   // Capabilities
@@ -49,7 +49,7 @@ exports.config = {
   // and 30 processes will get spawned. The property handles how many capabilities
   // from the same test should run tests.
   //
-  maxInstances: 10,
+  //maxInstances: 5,
   //
   // If you have trouble getting all important capabilities together, check out the
   // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -62,7 +62,12 @@ exports.config = {
       // 5 instances get started at a time.
       maxInstances: 5,
       //
-      browserName: config.browser,
+      browserName: 'chrome',
+    
+    },{
+      maxInstances: 5,
+      
+      browserName:'firefox',
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -117,7 +122,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services: ["chromedriver"],
+  services:[["selenium-standalone","docker"]],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -247,20 +252,26 @@ exports.config = {
    * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
    * afterEach in Mocha)
    */
-  // afterHook: function (test, context, { error, result, duration, passed, retries }) {
-  // },
+   afterHook: function (test, context, { error, result, duration, passed, retries }) {
+    if(test.error !== undefined){
+      browser.takeScreenshot(); 
+    }
+  },
   /**
    * Function to be executed after a test (in Mocha/Jasmine).
    */
-  afterTest: function (
+  afterTest: async function (
     test,
     context,
     { error, result, duration, passed, retries }
   ) {
     if (test.error !== undefined) {
       var name = "ERROR-chrome" + new Date();
-      browser.saveScreenshot("./errorShots/" + test.title + ".png");
+     
+      browser.saveScreenshot("./errorShots/" +test.title+ ".png");
       browser.takeScreenshot();
+    
+      
     }
   },
 
@@ -286,8 +297,10 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that ran
    */
-  // after: function (result, capabilities, specs) {
-  // },
+   //after: function (result, capabilities, specs) {
+      
+    
+ // },
   /**
    * Gets executed right after terminating the webdriver session.
    * @param {Object} config wdio configuration object
