@@ -11,7 +11,7 @@ describe("Test to check multipe actions on the webdriver uni page", () => {
     //expect(pagedetails.url).contains("university");
   });
 
-  it("Testing muliple sections of the webdriver uni site", () => {
+  it("Testing muliple sections of the webdriver uni site", async () => {
     //const contactUsButton = $("#contact-us");
     //contactUsButton.click();
     //browser.waitAndClick("#contact-us");
@@ -49,6 +49,6 @@ describe("Test to check multipe actions on the webdriver uni page", () => {
 
 
     //const pagedetails = browser.getUrlAndTitle();
-    expect(ContactUs_PO.getSuccessfulContactHeader.getText()).contain("Thank You");
+    expect(ContactUs_PO.getSuccessfulContactHeader.getText()).contain("Thank Yous");
   });
 });
