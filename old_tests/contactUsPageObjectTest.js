@@ -14,6 +14,7 @@ describe("Test Contact us form WebdriverUni", () => {
     );
     ContactUs_Page.successfulSubmissionHeader.waitForDisplayed(3000);
     try {
+    
       expect(ContactUs_Page.successfulSubmissionHeaderText).to.equal(
         "Thank You for your Message!"
       );
