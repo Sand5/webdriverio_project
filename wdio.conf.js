@@ -62,12 +62,12 @@ exports.config = {
       // 5 instances get started at a time.
       maxInstances: 5,
       //
-      browserName: 'chrome',
-    
-    },{
+      browserName: "chrome",
+    },
+    {
       maxInstances: 5,
-      
-      browserName:'firefox',
+
+      browserName: "firefox",
       // If outputDir is provided WebdriverIO can capture driver session logs
       // it is possible to configure which logTypes to include/exclude.
       // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
@@ -122,7 +122,7 @@ exports.config = {
   // Services take over a specific job you don't want to take care of. They enhance
   // your test setup with almost no effort. Unlike plugins, they don't add new
   // commands. Instead, they hook themselves up into the test process.
-  services:[["selenium-standalone","docker"]],
+  services: [["selenium-standalone", "docker"]],
 
   // Framework you want to run your specs with.
   // The following are supported: Mocha, Jasmine, and Cucumber
@@ -214,12 +214,14 @@ exports.config = {
       }
     });
 
-    browser.addCommand("waitAndSendKeys", function (selector,keys) {
+    browser.addCommand("waitAndSendKeys", function (selector, keys) {
       try {
         $(selector).waitForExist();
         $(selector).setValue(keys);
       } catch (Error) {
-        throw new Error("Could not sendkey " + $(keys) + ", using selector: " +$(selector));
+        throw new Error(
+          "Could not sendkey " + $(keys) + ", using selector: " + $(selector)
+        );
       }
     });
   },
@@ -252,9 +254,13 @@ exports.config = {
    * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling
    * afterEach in Mocha)
    */
-   afterHook: function (test, context, { error, result, duration, passed, retries }) {
-    if(test.error !== undefined){
-      browser.takeScreenshot(); 
+  afterHook: function (
+    test,
+    context,
+    { error, result, duration, passed, retries }
+  ) {
+    if (test.error !== undefined) {
+      browser.takeScreenshot();
     }
   },
   /**
@@ -267,11 +273,9 @@ exports.config = {
   ) {
     if (test.error !== undefined) {
       var name = "ERROR-chrome" + new Date();
-     
-      browser.saveScreenshot("./errorShots/" +test.title+ ".png");
+
+      browser.saveScreenshot("./errorShots/" + test.title + ".png");
       browser.takeScreenshot();
-    
-      
     }
   },
 
@@ -297,10 +301,9 @@ exports.config = {
    * @param {Array.<Object>} capabilities list of capabilities details
    * @param {Array.<String>} specs List of spec file paths that ran
    */
-   //after: function (result, capabilities, specs) {
-      
-    
- // },
+  //after: function (result, capabilities, specs) {
+
+  // },
   /**
    * Gets executed right after terminating the webdriver session.
    * @param {Object} config wdio configuration object
